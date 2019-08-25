@@ -41,14 +41,14 @@ Get-AzContext
 Get-AzContext -ListAvailable
 
 $context = Get-AzContext
-Rename-AzContext $context.Name 'SavillTech Dev'
+Rename-AzContext $context.Name 'Dev'
 
 Get-AzContextAutosaveSetting
 
 
 #Az Module PowerShell Commands
 #Note Most AzureRM commands can be replaced with Az
-Select-AzContext "SavillTech Prod"
+Select-AzContext "Prod"
 
 Get-Command -Module Az.Compute
 Get-Command -Module Az.Compute -Verb New
@@ -61,7 +61,7 @@ Get-AzVM -status | ft name, powerstate -AutoSize
 Get-AzVM -status | where {$_.powerstate -ne "VM Running"}
 
 #Look at secrets
-(Get-AzKeyVaultSecret –VaultName 'SavKeyVault' `
+(Get-AzKeyVaultSecret –VaultName 'KeyVaultTest' `
     -Name TestSecret).SecretValueText
 
 #Look at all extension images
